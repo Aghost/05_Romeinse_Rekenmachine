@@ -41,6 +41,8 @@
             this.btn_mul = new System.Windows.Forms.Button();
             this.btn_div = new System.Windows.Forms.Button();
             this.lbl_calc = new System.Windows.Forms.Label();
+            this.lbl_dec = new System.Windows.Forms.Label();
+            this.btn_eq = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox
@@ -171,11 +173,32 @@
             this.lbl_calc.TabIndex = 13;
             this.lbl_calc.Text = "|";
             // 
+            // lbl_dec
+            // 
+            this.lbl_dec.AutoSize = true;
+            this.lbl_dec.Location = new System.Drawing.Point(12, 177);
+            this.lbl_dec.Name = "lbl_dec";
+            this.lbl_dec.Size = new System.Drawing.Size(48, 13);
+            this.lbl_dec.TabIndex = 14;
+            this.lbl_dec.Text = "Decimal:";
+            // 
+            // btn_eq
+            // 
+            this.btn_eq.Location = new System.Drawing.Point(488, 202);
+            this.btn_eq.Name = "btn_eq";
+            this.btn_eq.Size = new System.Drawing.Size(152, 36);
+            this.btn_eq.TabIndex = 15;
+            this.btn_eq.Text = "=";
+            this.btn_eq.UseVisualStyleBackColor = true;
+            this.btn_eq.Click += new System.EventHandler(this.btn_eq_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 203);
+            this.ClientSize = new System.Drawing.Size(652, 250);
+            this.Controls.Add(this.btn_eq);
+            this.Controls.Add(this.lbl_dec);
             this.Controls.Add(this.lbl_calc);
             this.Controls.Add(this.btn_div);
             this.Controls.Add(this.btn_mul);
@@ -190,7 +213,7 @@
             this.Controls.Add(this.btn_I);
             this.Controls.Add(this.textBox);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculator Romanus";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,6 +235,8 @@
         private System.Windows.Forms.Button btn_mul;
         private System.Windows.Forms.Button btn_div;
         private System.Windows.Forms.Label lbl_calc;
+        private System.Windows.Forms.Label lbl_dec;
+        private System.Windows.Forms.Button btn_eq;
     }
 }
 

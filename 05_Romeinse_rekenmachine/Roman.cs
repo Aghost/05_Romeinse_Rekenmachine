@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace _05_Romeinse_rekenmachine
 {
@@ -50,7 +46,7 @@ namespace _05_Romeinse_rekenmachine
             {
                 while (number >= current.Key)
                 {
-                    roman.Append(current.Value);
+                    roman.Append(current);
                     number -= current.Key;
                 }
             }
@@ -58,29 +54,35 @@ namespace _05_Romeinse_rekenmachine
             return roman.ToString();
         }
 
-        public static int FromRoman(string roman)
+        public static int FromRoman(string str)
         {
-            int total = 0;
+            int result = 0;
 
-            int current, previous = 0;
-            char currentRom, previousRom = '\0';
-
-            for (int i = 0; i < roman.Length; i++)
+            for (int i = 0; i < str.Length; i++)
             {
-                currentRom = roman[i];
+                int s1 = RomanNumberDict[str[i]];
 
-                previous = previousRom != '\0' ? RomanNumberDict[previousRom] : '\0';
-                current = RomanNumberDict[currentRom];
+                if (i + 1 < str.Length)
+                {
+                    int s2 = RomanNumberDict[str[i + 1]];
 
-                if (previous != 0 && current > previous)
-                    total = total - (2 * previous) + current;
+                    if (s1 >= s2)
+                    {
+                        result = result + s1;
+                    }
+                    else
+                    {
+                        result = result + s2 - s1;
+                        i++;
+                    }
+                }
                 else
-                    total += current;
-
-                previous = currentRom;
+                {
+                    result = result + s1;
+                    i++;
+                }
             }
-
-            return total;
+            return result;
         }
     }
 }
