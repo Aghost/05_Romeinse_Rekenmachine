@@ -40,18 +40,18 @@ namespace _05_Romeinse_rekenmachine
 
         public static string ToRoman(int number)
         {
-            var roman = new StringBuilder();
+            var result = new StringBuilder();
             
             foreach (var current in NumberRomanDict)
             {
                 while (number >= current.Key)
                 {
-                    roman.Append(current);
+                    result.Append(current.Value);
                     number -= current.Key;
                 }
             }
 
-            return roman.ToString();
+            return result.ToString();
         }
 
         public static int FromRoman(string str)
@@ -68,7 +68,7 @@ namespace _05_Romeinse_rekenmachine
 
                     if (s1 >= s2)
                     {
-                        result = result + s1;
+                        result += s1;
                     }
                     else
                     {
@@ -78,7 +78,7 @@ namespace _05_Romeinse_rekenmachine
                 }
                 else
                 {
-                    result = result + s1;
+                    result += s1;
                     i++;
                 }
             }
