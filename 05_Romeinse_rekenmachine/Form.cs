@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 
-
 namespace _05_Romeinse_rekenmachine
 {
-    
     public partial class Form : System.Windows.Forms.Form
     {
         char operation = ' ';
