@@ -40,7 +40,6 @@
             this.btn_sub = new System.Windows.Forms.Button();
             this.btn_mul = new System.Windows.Forms.Button();
             this.btn_div = new System.Windows.Forms.Button();
-            this.lbl_calc = new System.Windows.Forms.Label();
             this.lbl_dec = new System.Windows.Forms.Label();
             this.btn_eq = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -164,15 +163,6 @@
             this.btn_div.UseVisualStyleBackColor = true;
             this.btn_div.Click += new System.EventHandler(this.Operator_Click);
             // 
-            // lbl_calc
-            // 
-            this.lbl_calc.AutoSize = true;
-            this.lbl_calc.Location = new System.Drawing.Point(12, 57);
-            this.lbl_calc.Name = "lbl_calc";
-            this.lbl_calc.Size = new System.Drawing.Size(9, 13);
-            this.lbl_calc.TabIndex = 13;
-            this.lbl_calc.Text = "|";
-            // 
             // lbl_dec
             // 
             this.lbl_dec.AutoSize = true;
@@ -199,7 +189,6 @@
             this.ClientSize = new System.Drawing.Size(652, 250);
             this.Controls.Add(this.btn_eq);
             this.Controls.Add(this.lbl_dec);
-            this.Controls.Add(this.lbl_calc);
             this.Controls.Add(this.btn_div);
             this.Controls.Add(this.btn_mul);
             this.Controls.Add(this.btn_sub);
@@ -234,7 +223,6 @@
         private System.Windows.Forms.Button btn_sub;
         private System.Windows.Forms.Button btn_mul;
         private System.Windows.Forms.Button btn_div;
-        private System.Windows.Forms.Label lbl_calc;
         private System.Windows.Forms.Label lbl_dec;
         private System.Windows.Forms.Button btn_eq;
     }
