@@ -264,9 +264,10 @@
             this.Controls.Add(this.btn_X);
             this.Controls.Add(this.btn_V);
             this.Controls.Add(this.btn_I);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form";
+            this.ShowIcon = false;
             this.Text = "Calculator Romanus";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

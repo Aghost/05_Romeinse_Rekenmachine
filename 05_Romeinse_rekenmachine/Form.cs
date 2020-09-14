@@ -14,11 +14,6 @@ namespace _05_Romeinse_rekenmachine
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Numeral_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
@@ -43,7 +38,6 @@ namespace _05_Romeinse_rekenmachine
         private void Operator_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-
             operation = b.Text.ToCharArray()[0];
 
             Update_Display();
@@ -68,7 +62,7 @@ namespace _05_Romeinse_rekenmachine
                 case '+': result = first + second; break;
                 case '-': result = first - second; break;
                 case '*': result = first * second; break;
-                case '/': result = first / second; break;
+                case '/': if (first != 0) { result = first / second; }; break;
             }
             textBox2.Text = $"{Roman.ToRoman(first)} {operation} {Roman.ToRoman(second)} = {Roman.ToRoman(result)}";
             textBox2.Text += $" ({result})";
